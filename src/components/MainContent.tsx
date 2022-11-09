@@ -19,15 +19,18 @@ export default function FizzBuzz(): JSX.Element {
     } else {
       FizzBuzzArr.push("FizzBuzz");
     }
-  }
-
+}
   return (
     <body>
       <h1 id="Title">FizzBuzz App</h1>
       <hr />
 
       <div id="maincontent">
-        <p>Fizz Buzzed Numbers: {FizzBuzzArr.map}</p>
+        <p>Fizz Buzzed Numbers:
+            {FizzBuzzArr.map((num, i) => {
+                return <li key={i}>{num}</li>
+            })}
+        </p>
         <hr />
         <button onClick={handleAddNumber}>Add Number</button>
       </div>
